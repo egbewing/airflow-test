@@ -26,7 +26,7 @@ from blaze_retail_api import blaze_retail_api
 def get_employees():
     @task(task_id='get_employee_records')
     def get_employee_records():
-        blaze = blaze_retail_api(partner_key='cf58c94647e143339062e170b2a684c9', Authorization='9cc2c78c26c24b4892f6c3b03e141dfd')
+        blaze = blaze_retail_api(partner_key='', Authorization='')
         employees = blaze.get_employees()
         employees.to_csv('/home/ted/airflow/dags/files/employees.csv', index=False)
     
