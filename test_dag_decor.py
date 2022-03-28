@@ -16,6 +16,16 @@ sys.path.append('/home/ted/Documents/kc/blaze-retail-api')
 from blaze_retail_api import blaze_retail_api
 
 
+# Need
+# file to handle connecting to db
+# ^^ this file will also include upsert method
+
+# DAG ARCHITECTURE
+# PULL employees from blaze api (by modified date filter)
+# UPSERT employees into table
+
+
+
 @dag(
     schedule_interval='@daily',
     start_date=pendulum.datetime(2022, 3, 21),
