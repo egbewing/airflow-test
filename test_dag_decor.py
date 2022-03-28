@@ -29,7 +29,7 @@ def get_employees():
         blaze = blaze_retail_api(partner_key='', Authorization='')
         employees = blaze.get_employees()
         employees.to_csv('/home/ted/airflow/dags/files/employees.csv', index=False)
-    
+
     @task(task_id='load_employee_records')
     def load_employees():
         pg_hook = PostgresHook(postgres_conn_id='blaze_db')
